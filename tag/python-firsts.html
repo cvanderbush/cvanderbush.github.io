@@ -1,0 +1,4454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Varls Site - python firsts</title>
+        <link rel="stylesheet" href="https://cvanderbush.github.io/theme/css/main.css" />
+        <link href="https://cvanderbush.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Varls Site Atom Feed" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://cvanderbush.github.io/">Varls Site </a></h1>
+                <nav><ul>
+                    <li><a href="https://cvanderbush.github.io/category/posts.html">posts</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="https://cvanderbush.github.io/first-post.html">First Post</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2017-11-15T14:00:00-05:00">
+                Published: Wed 15 November 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://cvanderbush.github.io/author/carl-vanderbush.html">Carl Vanderbush</a>
+        </address>
+<p>In <a href="https://cvanderbush.github.io/category/posts.html">posts</a>.</p>
+<p>tags: <a href="https://cvanderbush.github.io/tag/python-firsts.html">python firsts</a> </p>
+</footer><!-- /.post-info --><style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI colors. */
+.ansibold {
+  font-weight: bold;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  border-left-width: 1px;
+  padding-left: 5px;
+  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #90CAF9;
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected {
+  border-color: #ababab;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  div.cell.selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected.jupyter-soft-selected {
+  border-left-width: 0;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  padding: 0.4em;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
+  /* .CodeMirror-lines */
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+.rendered_html pre,
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+.rendered_html td,
+
+
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+<style type="text/css">
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Time-Series-in-Python-and-Pandas">Time Series in Python and Pandas<a class="anchor-link" href="#Time-Series-in-Python-and-Pandas">¶</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Data-observations-occurring-over-different-points-in-time,-whether-fixed-frequency-or-irregular.">Data observations occurring over different points in time, whether <em>fixed frequency</em> or <em>irregular</em>.<a class="anchor-link" href="#Data-observations-occurring-over-different-points-in-time,-whether-fixed-frequency-or-irregular.">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Entities-useful-to-think-about-concerning-time-series">Entities useful to think about concerning time series<a class="anchor-link" href="#Entities-useful-to-think-about-concerning-time-series">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Timestamps - specific instants in time</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Intervals - spans of time marked by a starting and ending timestamp</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Periods - special cases of Intervals, neatly bookended, like the month of January, the 1st Quarter, or the year 2016</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Experiment or Elapsed time - time relative to an arbitrarily chosen $t_0$ starting timestamp.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Standard-Python-Date-and-Time-Data-Types">Standard Python Date and Time Data Types<a class="anchor-link" href="#Standard-Python-Date-and-Time-Data-Types">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Python has date and time functionality in its <code>datetime</code>, <code>time</code>, and <code>calendar</code> modules.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The most basic type is the <code>datetime</code> type from the <code>datetime</code> module, which can store a date and time down to the microsecond</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="the-datetime-type---a-timestamp">the <code>datetime</code> type - a timestamp<a class="anchor-link" href="#the-datetime-type---a-timestamp">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>now()</code> method returns current time and will also take a time zone argument</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">now</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[3]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.datetime(2017, 11, 12, 11, 7, 30, 155385)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[4]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.datetime</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>today()</code> method also returns the current time but does not take any arguments.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="n">today</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.datetime(2017, 11, 12, 11, 8, 2, 482550)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">today</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.datetime</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Both give precision down to the microsecond.<br />
+0.001 = 1 millisecond = one onethousandth of a second<br />
+0.000001 = 1 microsecond = one onemillionth of a second<br />
+0.0000000001 = 1 nanosecond = one onebilliong of a second</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="the-date-type---less-precision-than-the-datetime-type">the <code>date</code> type - less precision than the <code>datetime</code> type<a class="anchor-link" href="#the-date-type---less-precision-than-the-datetime-type">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>.date()</code> returns a <code>date</code> object without a time.<br />
+Requires a <code>datetime</code> object, not integer arguments.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Two ways to do it:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_time</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[11]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.date(2017, 11, 12)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [36]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="n">my_time</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[36]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.date(2017, 11, 12)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_date</span> <span class="o">=</span> <span class="n">my_time</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">my_date</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[14]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.date</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Extracting-pieces-of-a-datetime-object">Extracting pieces of a <code>datetime</code> object<a class="anchor-link" href="#Extracting-pieces-of-a-datetime-object">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [46]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">my_time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[46]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.datetime(2017, 11, 12, 7, 16, 48, 466682)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>.year</code>, <code>.month</code>, <code>.day</code>, <code>.hour</code>, <code>.minute</code>, <code>.second</code>, <code>.microsecond</code><br />
+<code>.weekday()</code> returns the day of the week on a Mon=0, ..., Sun=6 scale</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [62]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_time</span><span class="o">.</span><span class="n">month</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[62]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>11</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [61]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_time</span><span class="o">.</span><span class="n">microsecond</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[61]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>466682</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [64]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_time</span><span class="o">.</span><span class="n">weekday</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[64]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>6</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="use-datetime()-to-manually-create-a-datetime-object">use <code>datetime()</code> to manually create a datetime object<a class="anchor-link" href="#use-datetime()-to-manually-create-a-datetime-object">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span> <span class="mi">234456</span><span class="p">)</span>
+<span class="n">new_time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[7]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.datetime(2017, 10, 31, 23, 45, 23, 234456)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="the-timedelta-type---an-Interval---the-difference-in-time-between-two-timestamps">the <code>timedelta</code> type - an Interval - the difference in time between two timestamps<a class="anchor-link" href="#the-timedelta-type---an-Interval---the-difference-in-time-between-two-timestamps">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When a <code>datetime</code> object is subtracted from another, a <code>timedelta</code> object results.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [79]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">diff</span> <span class="o">=</span> <span class="n">my_time</span> <span class="o">-</span> <span class="n">new_time</span>
+<span class="n">diff</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[79]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.timedelta(11, 27085, 232226)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>the difference is expressed in days, seconds, microseconds</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [80]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[80]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.timedelta</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Can also have <code>timedelta</code> expressed only in seconds with <code>.total_seconds()</code></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [83]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">diff</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[83]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>977485.232226</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Can also extract pieces from a <code>timedelta</code> object.<br />
+<code>.days</code>, <code>.seconds</code>, <code>.microseconds</code></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [89]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">diff</span><span class="o">.</span><span class="n">days</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[89]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>11</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Cannot subtract a <code>date</code> object from a <code>datetime</code> object or vice versa.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [103]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_time</span> <span class="o">-</span> <span class="n">my_date</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg"><ipython-input-103-b86ac857467e></span> in <span class="ansi-cyan-fg"><module></span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----> 1</span><span class="ansi-red-fg"> </span>my_time <span class="ansi-blue-fg">-</span> my_date
+
+<span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for -: 'datetime.datetime' and 'datetime.date'</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But can subtract one <code>date</code> object from another, resulting in a <code>timedelta</code> object of days.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_date</span> <span class="o">=</span> <span class="n">new_time</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>  <span class="c1"># make a new date object</span>
+<span class="n">new_date</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[16]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.date(2017, 10, 31)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [21]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="n">my_date</span> <span class="o">-</span> <span class="n">new_date</span>  <span class="c1"># difference results in timedelta object</span>
+<span class="n">test</span><span class="o">.</span><span class="n">resolution</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[21]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.timedelta(0, 0, 1)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Manually-create-intervals-with-the-timedelta()-method.">Manually create intervals with the <code>timedelta()</code> method.<a class="anchor-link" href="#Manually-create-intervals-with-the-timedelta()-method.">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [23]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">timedelta</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [29]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_interval</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">3600</span> <span class="o">+</span> <span class="mi">37</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="mi">22</span><span class="p">)</span>  <span class="c1"># 12 days 5hrs 37 min 22 seconds</span>
+<span class="n">my_interval</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[29]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.timedelta(20, 20242)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Shift-time-with-timedelta()">Shift time with <code>timedelta()</code><a class="anchor-link" href="#Shift-time-with-timedelta()">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>timedelta</code> objects can be added or subtracted from <code>datetime</code> or <code>date</code> objects, resulting in the same type shifted forward or backward in time.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [26]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [37]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[37]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.datetime(2017, 6, 19, 0, 0)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [30]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start</span> <span class="o">+</span> <span class="n">my_interval</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[30]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.datetime(2017, 7, 21, 5, 37, 22)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [35]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">my_date</span><span class="p">)</span>  <span class="c1"># try a timedelta with a date type</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[35]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.date</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [39]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_date</span>  <span class="c1"># reminder</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[39]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.date(2017, 11, 12)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [38]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">657</span><span class="p">)</span>  <span class="c1"># results in a date type, seconds and microseconds are lost in the process</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[38]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.date(2017, 11, 15)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Can work with multiples of timedeltas as well.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [40]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">four_weeks_hence</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">timedelta</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">four_weeks_hence</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[40]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.datetime(2017, 12, 10, 11, 51, 20, 216229)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Datetimes-and-strings">Datetimes and strings<a class="anchor-link" href="#Datetimes-and-strings">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Converting-datetimes-to-string">Converting datetimes to string<a class="anchor-link" href="#Converting-datetimes-to-string">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [42]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">33</span><span class="p">)</span>
+<span class="nb">str</span><span class="p">(</span><span class="n">stamp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[42]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>'2017-11-12 14:37:33'</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Convenient function but maybe not the desired format or more than you want.<br />
+For a little control, use <code>strftime()</code>, mnemonic "string format time".<br />
+It takes a <code>datetime</code> and a formatting string argument.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [47]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">datetime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">stamp</span><span class="p">,</span> <span class="s1">'%m-</span><span class="si">%d</span><span class="s1">-%y'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[47]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>'11-12-17'</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Can achieve many different results using the formatting codes.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [49]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">datetime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">stamp</span><span class="p">,</span> <span class="s1">'%A, the </span><span class="si">%d</span><span class="s1">th of %B, %Y'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[49]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>'Sunday, the 12th of November, 2017'</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>See full formatting codes at Python docs <a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior">https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior</a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Converting-strings-to-datetimes">Converting strings to datetimes<a class="anchor-link" href="#Converting-strings-to-datetimes">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Very often you will encounter a date represented as a string and need to convert it to <code>datetime</code> in order to perform calculations.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="strptime()"><code>strptime()</code><a class="anchor-link" href="#strptime()">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>strftime()</code> sister function, <code>strptime()</code> takes a string date and a formatting string indicating the positions of the date components in the string date and returns a <code>datetime</code> object.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [50]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s1">'3/14/17'</span><span class="p">,</span> <span class="s1">'%m/</span><span class="si">%d</span><span class="s1">/%y'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[50]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.datetime(2017, 3, 14, 0, 0)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [51]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s1">'Dec-12-2017'</span><span class="p">,</span> <span class="s1">'%b-</span><span class="si">%d</span><span class="s1">-%Y'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[51]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.datetime(2017, 12, 12, 0, 0)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This works well, but you may get weary of always having to supply the formatting string.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="parse()"><code>parse()</code><a class="anchor-link" href="#parse()">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>dateutil</code> package contains a powerful function, <code>parser.parse()</code> which will parse most date strings into a <code>datetime</code>.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [52]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">dateutil.parser</span> <span class="k">import</span> <span class="n">parse</span>
+<span class="n">parse</span><span class="p">(</span><span class="s1">'2017-3-7'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[52]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.datetime(2017, 3, 7, 0, 0)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [53]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">parse</span><span class="p">(</span><span class="s1">'4/5/17'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[53]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.datetime(2017, 4, 5, 0, 0)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [55]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">parse</span><span class="p">(</span><span class="s1">'June 6th, 1984, 10:45 PM'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[55]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.datetime(1984, 6, 6, 22, 45)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When you know you're dealing with International date formats that list the day before the month, <code>parse()</code> takes an argument <code>dayfirst=True</code></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [60]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">parse</span><span class="p">(</span><span class="s1">'4-5-17'</span><span class="p">,</span> <span class="n">dayfirst</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>  <span class="c1"># May 4th</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[60]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.datetime(2017, 5, 4, 0, 0)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>However, <code>parse()</code> is not built to handle arrays of dates.  You'd have to use list comprehension to work with arrays.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [62]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">parse</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'7-21-17'</span><span class="p">,</span> <span class="s1">'7-22-17'</span><span class="p">,</span> <span class="s1">'7-23-17'</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[62]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>[datetime.datetime(2017, 7, 21, 0, 0),
+ datetime.datetime(2017, 7, 22, 0, 0),
+ datetime.datetime(2017, 7, 23, 0, 0)]</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Pandas-.to_datetime()">Pandas <code>.to_datetime()</code><a class="anchor-link" href="#Pandas-.to_datetime()">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>pd.to_datetime()</code> <strong>is</strong> built to handle arrays of dates and parses as well as <code>parse()</code></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [75]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">datestrs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'7/6/2017'</span><span class="p">,</span> <span class="s1">'8-9-17'</span><span class="p">,</span> <span class="s1">'12-Feb-17'</span><span class="p">]</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">datestrs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[75]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>DatetimeIndex(['2017-07-06', '2017-08-09', '2017-02-12'], dtype='datetime64[ns]', freq=None)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When <code>pd.to_datetime()</code> parses multiple date strings, the result is a Pandas DatetimeIndex.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [70]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s1">'7/6/2017'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[70]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>Timestamp('2017-07-06 00:00:00')</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But when <code>pd.to_datetime()</code> parses a single date string, the result is a Pandas Timestamp.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Time-Series-Basics">Time Series Basics<a class="anchor-link" href="#Time-Series-Basics">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The most basic kind of time series object in Pandas is, generically, a Series of data indexed by timestamps.<br />
+The timestamps may arise from Python strings or <code>datetime</code> objects.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="k">import</span> <span class="n">Series</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)]</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">dates</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[3]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>pandas.core.series.Series</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Under the hood, these datetime objects have been assembled into a Pandas DatetimeIndex and the variable <code>ts</code> is of type <code>Series</code>.<br />
+** older documentation may refer to a <code>TimeSeries</code> type but that was deprecated with Pandas 0.13</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As with all Series, arithmetic operations between differently indexed time series automatically align on the dates:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[4]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2017-01-02    1.013992
+2017-01-05   -0.544905
+2017-01-07   -1.324754
+2017-01-08   -0.020392
+2017-01-10    0.635246
+2017-01-12    0.251412
+dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># every other</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2017-01-02    1.013992
+2017-01-07   -1.324754
+2017-01-10    0.635246
+dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts</span> <span class="o">+</span> <span class="n">ts</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># numbers summed where indexes match, NaNs where the 2nd Series has nothing</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2017-01-02    2.027985
+2017-01-05         NaN
+2017-01-07   -2.649507
+2017-01-08         NaN
+2017-01-10    1.270492
+2017-01-12         NaN
+dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Scalar values from the DatetimeIndex are of Pandas type <code>Timestamp</code>.  A <code>Timestamp</code> can be substituted anywhere you'd use a <code>Datetime</code> object.<br />
+Additionally, it can store frequency information and understands how to do Time Zone conversions and other kinds of manipulations.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[7]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>DatetimeIndex(['2017-01-02', '2017-01-05', '2017-01-07', '2017-01-08',
+               '2017-01-10', '2017-01-12'],
+              dtype='datetime64[ns]', freq=None)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[8]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>pandas._libs.tslib.Timestamp</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Indexing,-Selecting,-Subsetting">Indexing, Selecting, Subsetting<a class="anchor-link" href="#Indexing,-Selecting,-Subsetting">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts</span>  <span class="c1"># reminder</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[9]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2017-01-02    1.013992
+2017-01-05   -0.544905
+2017-01-07   -1.324754
+2017-01-08   -0.020392
+2017-01-10    0.635246
+2017-01-12    0.251412
+dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[10]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>Timestamp('2017-01-07 00:00:00')</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stamp</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts</span><span class="p">[</span><span class="n">stamp</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[12]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>-1.3247536905615083</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Can also pass a string that is interpretable as a date:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts</span><span class="p">[</span><span class="s1">'Jan-7-2017'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[13]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>-1.3247536905615083</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts</span><span class="p">[</span><span class="s1">'20170107'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[14]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>-1.3247536905615083</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For longer time series, a year only or a year and month can be passed to select data:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">longer_ts</span> <span class="o">=</span> <span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'1/1/2014'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">1000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">longer_ts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[16]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2014-01-01   -0.581059
+2014-01-02   -0.626574
+2014-01-03    0.285798
+2014-01-04    0.436557
+2014-01-05    0.249141
+2014-01-06    0.248383
+2014-01-07   -0.270371
+2014-01-08   -1.209010
+2014-01-09    0.004494
+2014-01-10   -2.059895
+2014-01-11   -0.916560
+2014-01-12   -0.866008
+2014-01-13    0.289443
+2014-01-14    0.245898
+2014-01-15   -0.131810
+2014-01-16    0.488818
+2014-01-17    0.291183
+2014-01-18    0.186903
+2014-01-19    0.212818
+2014-01-20    1.240618
+2014-01-21    0.774390
+2014-01-22    0.904166
+2014-01-23    0.167843
+2014-01-24   -1.932781
+2014-01-25   -0.089920
+2014-01-26   -0.759111
+2014-01-27   -0.072015
+2014-01-28   -1.091258
+2014-01-29    0.612128
+2014-01-30   -0.171878
+                ...   
+2016-08-28    1.197473
+2016-08-29   -0.521036
+2016-08-30    0.622203
+2016-08-31   -0.721521
+2016-09-01   -1.106838
+2016-09-02   -0.985234
+2016-09-03   -0.864989
+2016-09-04    2.253327
+2016-09-05    0.274149
+2016-09-06   -0.298985
+2016-09-07    1.070865
+2016-09-08    0.469468
+2016-09-09    1.331798
+2016-09-10   -1.721861
+2016-09-11    0.189996
+2016-09-12   -1.273872
+2016-09-13    1.911213
+2016-09-14    1.171125
+2016-09-15   -0.092849
+2016-09-16   -0.281034
+2016-09-17    1.186484
+2016-09-18    0.414335
+2016-09-19   -0.836099
+2016-09-20    0.806664
+2016-09-21    0.801261
+2016-09-22    0.543293
+2016-09-23   -1.075291
+2016-09-24    0.227980
+2016-09-25   -0.344715
+2016-09-26   -1.659978
+Freq: D, Length: 1000, dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [17]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">longer_ts</span><span class="p">[</span><span class="s1">'2015'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[17]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2015-01-01   -1.978820
+2015-01-02    0.386896
+2015-01-03    0.801072
+2015-01-04   -0.835593
+2015-01-05   -0.128167
+2015-01-06   -0.268469
+2015-01-07   -0.744481
+2015-01-08    2.451290
+2015-01-09   -1.267607
+2015-01-10   -1.336758
+2015-01-11   -1.606489
+2015-01-12   -0.124963
+2015-01-13   -1.123109
+2015-01-14   -2.002436
+2015-01-15   -0.603219
+2015-01-16    0.549910
+2015-01-17    0.628098
+2015-01-18   -0.807392
+2015-01-19   -0.890333
+2015-01-20   -0.332081
+2015-01-21    1.008852
+2015-01-22   -1.498122
+2015-01-23   -0.720306
+2015-01-24    0.327020
+2015-01-25   -0.909572
+2015-01-26   -0.135499
+2015-01-27   -0.406672
+2015-01-28    0.953059
+2015-01-29    0.675853
+2015-01-30   -0.692012
+                ...   
+2015-12-02   -0.200029
+2015-12-03   -0.615186
+2015-12-04    0.269072
+2015-12-05   -1.035311
+2015-12-06    1.697176
+2015-12-07    0.644690
+2015-12-08   -1.981519
+2015-12-09    0.815312
+2015-12-10   -0.752776
+2015-12-11   -1.548760
+2015-12-12    1.782599
+2015-12-13   -0.524443
+2015-12-14   -0.820695
+2015-12-15   -0.381828
+2015-12-16   -0.326772
+2015-12-17    0.684946
+2015-12-18   -0.706974
+2015-12-19   -2.044069
+2015-12-20   -0.103373
+2015-12-21   -1.054426
+2015-12-22    1.673078
+2015-12-23    0.943807
+2015-12-24    0.035769
+2015-12-25    0.524367
+2015-12-26   -1.608690
+2015-12-27    0.878519
+2015-12-28   -1.865983
+2015-12-29    2.338116
+2015-12-30   -0.545109
+2015-12-31   -0.111200
+Freq: D, Length: 365, dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [18]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">longer_ts</span><span class="p">[</span><span class="s1">'2016-Mar'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[18]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2016-03-01   -0.109365
+2016-03-02    0.181461
+2016-03-03   -0.175725
+2016-03-04    0.547773
+2016-03-05   -0.934731
+2016-03-06    1.642307
+2016-03-07    1.996190
+2016-03-08    0.801441
+2016-03-09    0.674438
+2016-03-10   -0.114258
+2016-03-11   -0.155783
+2016-03-12   -1.439531
+2016-03-13    1.282998
+2016-03-14   -0.556539
+2016-03-15    0.047362
+2016-03-16    0.604573
+2016-03-17   -0.447864
+2016-03-18    0.710213
+2016-03-19   -1.183996
+2016-03-20   -0.134745
+2016-03-21   -1.195419
+2016-03-22   -0.009212
+2016-03-23    0.368021
+2016-03-24   -0.632013
+2016-03-25   -1.304101
+2016-03-26   -0.384647
+2016-03-27   -0.244581
+2016-03-28   -2.301828
+2016-03-29   -0.819440
+2016-03-30    2.412657
+2016-03-31    0.617553
+Freq: D, dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Slicing with dates works like slicing with a regular Series:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [19]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">longer_ts</span><span class="p">[:</span><span class="s1">'2014-Feb-15'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[19]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2014-01-01   -0.581059
+2014-01-02   -0.626574
+2014-01-03    0.285798
+2014-01-04    0.436557
+2014-01-05    0.249141
+2014-01-06    0.248383
+2014-01-07   -0.270371
+2014-01-08   -1.209010
+2014-01-09    0.004494
+2014-01-10   -2.059895
+2014-01-11   -0.916560
+2014-01-12   -0.866008
+2014-01-13    0.289443
+2014-01-14    0.245898
+2014-01-15   -0.131810
+2014-01-16    0.488818
+2014-01-17    0.291183
+2014-01-18    0.186903
+2014-01-19    0.212818
+2014-01-20    1.240618
+2014-01-21    0.774390
+2014-01-22    0.904166
+2014-01-23    0.167843
+2014-01-24   -1.932781
+2014-01-25   -0.089920
+2014-01-26   -0.759111
+2014-01-27   -0.072015
+2014-01-28   -1.091258
+2014-01-29    0.612128
+2014-01-30   -0.171878
+2014-01-31   -0.544346
+2014-02-01    0.690956
+2014-02-02   -1.544420
+2014-02-03    0.666483
+2014-02-04    0.595745
+2014-02-05    0.435411
+2014-02-06    0.627232
+2014-02-07    0.251988
+2014-02-08    1.481643
+2014-02-09    0.515291
+2014-02-10    0.232096
+2014-02-11    0.930026
+2014-02-12    1.409060
+2014-02-13   -0.729496
+2014-02-14   -0.144229
+2014-02-15   -0.178375
+Freq: D, dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [20]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">longer_ts</span><span class="p">[</span><span class="s1">'9/15/2016'</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[20]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2016-09-15   -0.092849
+2016-09-16   -0.281034
+2016-09-17    1.186484
+2016-09-18    0.414335
+2016-09-19   -0.836099
+2016-09-20    0.806664
+2016-09-21    0.801261
+2016-09-22    0.543293
+2016-09-23   -1.075291
+2016-09-24    0.227980
+2016-09-25   -0.344715
+2016-09-26   -1.659978
+Freq: D, dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Because time series are usually ordered chronologically, you can slice using dates that aren't actually present in the index:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [21]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts</span>  <span class="c1"># reminder</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[21]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2017-01-02    1.013992
+2017-01-05   -0.544905
+2017-01-07   -1.324754
+2017-01-08   -0.020392
+2017-01-10    0.635246
+2017-01-12    0.251412
+dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [22]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts</span><span class="p">[</span><span class="s1">'1/3/2017'</span><span class="p">:</span><span class="s1">'1-11-17'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[22]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2017-01-05   -0.544905
+2017-01-07   -1.324754
+2017-01-08   -0.020392
+2017-01-10    0.635246
+dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Remember, slicing returns a view on the original, so modifying the slice modifies the original.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [44]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sl</span> <span class="o">=</span> <span class="n">ts</span><span class="p">[</span><span class="s1">'1/1/2017'</span><span class="p">:</span><span class="s1">'1/6/2017'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [45]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sl</span><span class="p">[</span><span class="s1">'1/2/2017'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">3.14159</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [46]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[46]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2017-01-02    3.141590
+2017-01-05   -0.544905
+2017-01-07   -1.324754
+2017-01-08   -0.020392
+2017-01-10    0.635246
+2017-01-12    0.251412
+dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>but adding a new entry to the slice does not add to the original</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [47]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sl</span><span class="p">[</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">2.781828</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [48]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sl</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[48]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2017-01-02    3.141590
+2017-01-05   -0.544905
+2017-01-06    2.781828
+dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [49]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[49]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2017-01-02    3.141590
+2017-01-05   -0.544905
+2017-01-07   -1.324754
+2017-01-08   -0.020392
+2017-01-10    0.635246
+2017-01-12    0.251412
+dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note when <strong>adding</strong> to a time series, whether slice or original, you must supply a proper Datetime subscript, not a string:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [50]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sl</span><span class="p">[</span><span class="s1">'1/3/2017'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.11111</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [51]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sl</span>  <span class="c1"># not inserted chronologically in the DatetimeIndex</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[51]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2017-01-02 00:00:00    3.141590
+2017-01-05 00:00:00   -0.544905
+2017-01-06 00:00:00    2.781828
+1/3/2017               1.111110
+dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you want, instead, to get a copy, not a view, use the awkwardly named <code>truncate()</code> method with no arguments.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [52]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts2</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">truncate</span><span class="p">()</span>  <span class="c1"># makes a copy, can use arguments to restrict data before or after dates</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [53]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[53]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2017-01-02    3.141590
+2017-01-05   -0.544905
+2017-01-07   -1.324754
+2017-01-08   -0.020392
+2017-01-10    0.635246
+2017-01-12    0.251412
+dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [54]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts2</span><span class="p">[</span><span class="s1">'1/2/2017'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># alter the copy</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [55]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[55]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2017-01-02    4.000000
+2017-01-05   -0.544905
+2017-01-07   -1.324754
+2017-01-08   -0.020392
+2017-01-10    0.635246
+2017-01-12    0.251412
+dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [56]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts</span>  <span class="c1"># doesn't affect the original</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[56]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2017-01-02    3.141590
+2017-01-05   -0.544905
+2017-01-07   -1.324754
+2017-01-08   -0.020392
+2017-01-10    0.635246
+2017-01-12    0.251412
+dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Slicing-time-series-in-DataFrames">Slicing time series in DataFrames<a class="anchor-link" href="#Slicing-time-series-in-DataFrames">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The above holds true for DataFrames as well.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [145]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'1/1/2014'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'W-WED'</span><span class="p">)</span>
+<span class="n">dates</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[145]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>DatetimeIndex(['2014-01-01', '2014-01-08', '2014-01-15', '2014-01-22',
+               '2014-01-29', '2014-02-05', '2014-02-12', '2014-02-19',
+               '2014-02-26', '2014-03-05', '2014-03-12', '2014-03-19',
+               '2014-03-26', '2014-04-02', '2014-04-09', '2014-04-16',
+               '2014-04-23', '2014-04-30', '2014-05-07', '2014-05-14',
+               '2014-05-21', '2014-05-28', '2014-06-04', '2014-06-11',
+               '2014-06-18', '2014-06-25', '2014-07-02', '2014-07-09',
+               '2014-07-16', '2014-07-23', '2014-07-30', '2014-08-06',
+               '2014-08-13', '2014-08-20', '2014-08-27', '2014-09-03',
+               '2014-09-10', '2014-09-17', '2014-09-24', '2014-10-01',
+               '2014-10-08', '2014-10-15', '2014-10-22', '2014-10-29',
+               '2014-11-05', '2014-11-12', '2014-11-19', '2014-11-26',
+               '2014-12-03', '2014-12-10', '2014-12-17', '2014-12-24',
+               '2014-12-31', '2015-01-07', '2015-01-14', '2015-01-21',
+               '2015-01-28', '2015-02-04', '2015-02-11', '2015-02-18',
+               '2015-02-25', '2015-03-04', '2015-03-11', '2015-03-18',
+               '2015-03-25', '2015-04-01', '2015-04-08', '2015-04-15',
+               '2015-04-22', '2015-04-29', '2015-05-06', '2015-05-13',
+               '2015-05-20', '2015-05-27', '2015-06-03', '2015-06-10',
+               '2015-06-17', '2015-06-24', '2015-07-01', '2015-07-08',
+               '2015-07-15', '2015-07-22', '2015-07-29', '2015-08-05',
+               '2015-08-12', '2015-08-19', '2015-08-26', '2015-09-02',
+               '2015-09-09', '2015-09-16', '2015-09-23', '2015-09-30',
+               '2015-10-07', '2015-10-14', '2015-10-21', '2015-10-28',
+               '2015-11-04', '2015-11-11', '2015-11-18', '2015-11-25'],
+              dtype='datetime64[ns]', freq='W-WED')</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [147]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">long_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'California'</span><span class="p">,</span> <span class="s1">'Texas'</span><span class="p">,</span> <span class="s1">'New York'</span><span class="p">,</span> <span class="s1">'Florida'</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">dates</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [148]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">long_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[148]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>California</th>
+<th>Texas</th>
+<th>New York</th>
+<th>Florida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>2014-01-01</th>
+<td>-0.670055</td>
+<td>0.887765</td>
+<td>0.046678</td>
+<td>2.034517</td>
+</tr>
+<tr>
+<th>2014-01-08</th>
+<td>0.763195</td>
+<td>-1.009497</td>
+<td>0.343186</td>
+<td>0.808925</td>
+</tr>
+<tr>
+<th>2014-01-15</th>
+<td>0.567926</td>
+<td>-0.649508</td>
+<td>0.301028</td>
+<td>-1.183059</td>
+</tr>
+<tr>
+<th>2014-01-22</th>
+<td>1.029831</td>
+<td>-0.357734</td>
+<td>-0.256060</td>
+<td>-0.789614</td>
+</tr>
+<tr>
+<th>2014-01-29</th>
+<td>0.441617</td>
+<td>0.582626</td>
+<td>0.546245</td>
+<td>-0.036859</td>
+</tr>
+<tr>
+<th>2014-02-05</th>
+<td>0.102730</td>
+<td>-0.013300</td>
+<td>-0.592911</td>
+<td>1.399227</td>
+</tr>
+<tr>
+<th>2014-02-12</th>
+<td>0.324932</td>
+<td>-1.371970</td>
+<td>0.430918</td>
+<td>-0.582621</td>
+</tr>
+<tr>
+<th>2014-02-19</th>
+<td>-0.614318</td>
+<td>0.519467</td>
+<td>1.529626</td>
+<td>0.525963</td>
+</tr>
+<tr>
+<th>2014-02-26</th>
+<td>1.050643</td>
+<td>-0.623419</td>
+<td>-1.511494</td>
+<td>-1.424813</td>
+</tr>
+<tr>
+<th>2014-03-05</th>
+<td>-0.647939</td>
+<td>0.360815</td>
+<td>0.194534</td>
+<td>-0.006605</td>
+</tr>
+<tr>
+<th>2014-03-12</th>
+<td>1.883304</td>
+<td>-0.163079</td>
+<td>0.802049</td>
+<td>-1.020359</td>
+</tr>
+<tr>
+<th>2014-03-19</th>
+<td>-1.328516</td>
+<td>-1.147734</td>
+<td>-0.206244</td>
+<td>-1.397381</td>
+</tr>
+<tr>
+<th>2014-03-26</th>
+<td>-0.185800</td>
+<td>-0.099636</td>
+<td>-1.490901</td>
+<td>1.088448</td>
+</tr>
+<tr>
+<th>2014-04-02</th>
+<td>-0.471485</td>
+<td>-0.173192</td>
+<td>2.538425</td>
+<td>0.696665</td>
+</tr>
+<tr>
+<th>2014-04-09</th>
+<td>0.928600</td>
+<td>0.447417</td>
+<td>0.055320</td>
+<td>0.472662</td>
+</tr>
+<tr>
+<th>2014-04-16</th>
+<td>-0.317052</td>
+<td>0.332184</td>
+<td>1.337782</td>
+<td>-0.937864</td>
+</tr>
+<tr>
+<th>2014-04-23</th>
+<td>0.052138</td>
+<td>0.531489</td>
+<td>-1.407206</td>
+<td>0.463367</td>
+</tr>
+<tr>
+<th>2014-04-30</th>
+<td>-0.240915</td>
+<td>-0.173741</td>
+<td>0.108472</td>
+<td>-1.344533</td>
+</tr>
+<tr>
+<th>2014-05-07</th>
+<td>0.985908</td>
+<td>-1.419986</td>
+<td>-0.796431</td>
+<td>0.328848</td>
+</tr>
+<tr>
+<th>2014-05-14</th>
+<td>1.779332</td>
+<td>0.490941</td>
+<td>-1.574628</td>
+<td>1.000226</td>
+</tr>
+<tr>
+<th>2014-05-21</th>
+<td>-1.414673</td>
+<td>-1.386760</td>
+<td>-0.592246</td>
+<td>-1.305204</td>
+</tr>
+<tr>
+<th>2014-05-28</th>
+<td>-0.895228</td>
+<td>0.528321</td>
+<td>0.242124</td>
+<td>-1.078025</td>
+</tr>
+<tr>
+<th>2014-06-04</th>
+<td>-1.320496</td>
+<td>0.420959</td>
+<td>0.234490</td>
+<td>-0.467045</td>
+</tr>
+<tr>
+<th>2014-06-11</th>
+<td>0.591390</td>
+<td>0.678435</td>
+<td>-0.192539</td>
+<td>-1.213658</td>
+</tr>
+<tr>
+<th>2014-06-18</th>
+<td>-2.041073</td>
+<td>-0.009574</td>
+<td>0.479112</td>
+<td>-0.528043</td>
+</tr>
+<tr>
+<th>2014-06-25</th>
+<td>-0.564194</td>
+<td>-1.034689</td>
+<td>-0.447728</td>
+<td>0.410828</td>
+</tr>
+<tr>
+<th>2014-07-02</th>
+<td>-0.264198</td>
+<td>0.317137</td>
+<td>0.682081</td>
+<td>-0.044991</td>
+</tr>
+<tr>
+<th>2014-07-09</th>
+<td>2.139378</td>
+<td>0.999078</td>
+<td>0.349618</td>
+<td>-2.258242</td>
+</tr>
+<tr>
+<th>2014-07-16</th>
+<td>-0.706273</td>
+<td>0.299016</td>
+<td>0.330351</td>
+<td>-0.652751</td>
+</tr>
+<tr>
+<th>2014-07-23</th>
+<td>0.620980</td>
+<td>-0.781152</td>
+<td>-1.044361</td>
+<td>-0.700761</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>2015-05-06</th>
+<td>-0.035837</td>
+<td>-0.931344</td>
+<td>0.313048</td>
+<td>0.605522</td>
+</tr>
+<tr>
+<th>2015-05-13</th>
+<td>-0.084859</td>
+<td>1.251015</td>
+<td>2.058171</td>
+<td>-0.207379</td>
+</tr>
+<tr>
+<th>2015-05-20</th>
+<td>-0.206285</td>
+<td>-1.292480</td>
+<td>0.095645</td>
+<td>-1.584340</td>
+</tr>
+<tr>
+<th>2015-05-27</th>
+<td>-0.932938</td>
+<td>0.469286</td>
+<td>1.594331</td>
+<td>-0.879406</td>
+</tr>
+<tr>
+<th>2015-06-03</th>
+<td>-1.222327</td>
+<td>0.215345</td>
+<td>-0.943071</td>
+<td>-0.690301</td>
+</tr>
+<tr>
+<th>2015-06-10</th>
+<td>-0.930289</td>
+<td>0.275847</td>
+<td>-0.515775</td>
+<td>-0.196120</td>
+</tr>
+<tr>
+<th>2015-06-17</th>
+<td>0.233652</td>
+<td>-1.420764</td>
+<td>-0.204499</td>
+<td>-1.230919</td>
+</tr>
+<tr>
+<th>2015-06-24</th>
+<td>-0.075870</td>
+<td>1.414713</td>
+<td>-1.724532</td>
+<td>-0.214290</td>
+</tr>
+<tr>
+<th>2015-07-01</th>
+<td>-1.011935</td>
+<td>0.299693</td>
+<td>0.625892</td>
+<td>1.132355</td>
+</tr>
+<tr>
+<th>2015-07-08</th>
+<td>0.126574</td>
+<td>-0.696162</td>
+<td>-0.359065</td>
+<td>-0.285593</td>
+</tr>
+<tr>
+<th>2015-07-15</th>
+<td>-0.055311</td>
+<td>-0.762179</td>
+<td>0.674745</td>
+<td>1.917619</td>
+</tr>
+<tr>
+<th>2015-07-22</th>
+<td>1.260957</td>
+<td>0.305697</td>
+<td>-0.515664</td>
+<td>0.153019</td>
+</tr>
+<tr>
+<th>2015-07-29</th>
+<td>-1.104615</td>
+<td>0.707680</td>
+<td>1.884046</td>
+<td>-0.619463</td>
+</tr>
+<tr>
+<th>2015-08-05</th>
+<td>0.544672</td>
+<td>-1.169498</td>
+<td>0.596024</td>
+<td>0.549084</td>
+</tr>
+<tr>
+<th>2015-08-12</th>
+<td>1.495104</td>
+<td>-0.582083</td>
+<td>0.694864</td>
+<td>0.778727</td>
+</tr>
+<tr>
+<th>2015-08-19</th>
+<td>-1.562557</td>
+<td>0.370357</td>
+<td>-0.037172</td>
+<td>0.675588</td>
+</tr>
+<tr>
+<th>2015-08-26</th>
+<td>-0.446703</td>
+<td>0.731919</td>
+<td>-1.708521</td>
+<td>0.564574</td>
+</tr>
+<tr>
+<th>2015-09-02</th>
+<td>0.241940</td>
+<td>0.163498</td>
+<td>-1.862696</td>
+<td>0.415779</td>
+</tr>
+<tr>
+<th>2015-09-09</th>
+<td>-2.296901</td>
+<td>-0.563720</td>
+<td>1.324903</td>
+<td>-1.095282</td>
+</tr>
+<tr>
+<th>2015-09-16</th>
+<td>0.442306</td>
+<td>1.355271</td>
+<td>-1.124563</td>
+<td>-0.290335</td>
+</tr>
+<tr>
+<th>2015-09-23</th>
+<td>-0.310402</td>
+<td>0.132168</td>
+<td>1.050179</td>
+<td>-0.643694</td>
+</tr>
+<tr>
+<th>2015-09-30</th>
+<td>-1.246879</td>
+<td>1.287341</td>
+<td>0.865977</td>
+<td>-1.364445</td>
+</tr>
+<tr>
+<th>2015-10-07</th>
+<td>0.723050</td>
+<td>0.588241</td>
+<td>1.144880</td>
+<td>0.168754</td>
+</tr>
+<tr>
+<th>2015-10-14</th>
+<td>-0.357534</td>
+<td>0.191892</td>
+<td>-2.103178</td>
+<td>-0.537545</td>
+</tr>
+<tr>
+<th>2015-10-21</th>
+<td>0.765098</td>
+<td>-0.893700</td>
+<td>0.149578</td>
+<td>-1.427956</td>
+</tr>
+<tr>
+<th>2015-10-28</th>
+<td>-2.301114</td>
+<td>0.175801</td>
+<td>-1.972059</td>
+<td>-0.042373</td>
+</tr>
+<tr>
+<th>2015-11-04</th>
+<td>-0.521228</td>
+<td>-1.491611</td>
+<td>0.238031</td>
+<td>0.630240</td>
+</tr>
+<tr>
+<th>2015-11-11</th>
+<td>0.255590</td>
+<td>-0.960154</td>
+<td>-0.004225</td>
+<td>1.170644</td>
+</tr>
+<tr>
+<th>2015-11-18</th>
+<td>0.822972</td>
+<td>0.429818</td>
+<td>-0.007667</td>
+<td>-0.290294</td>
+</tr>
+<tr>
+<th>2015-11-25</th>
+<td>0.969651</td>
+<td>0.337200</td>
+<td>-0.160983</td>
+<td>-0.858754</td>
+</tr>
+</tbody>
+</table>
+<p>100 rows × 4 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [149]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">long_df</span><span class="p">[</span><span class="s1">'2015'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[149]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>California</th>
+<th>Texas</th>
+<th>New York</th>
+<th>Florida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>2015-01-07</th>
+<td>-0.253776</td>
+<td>-2.051296</td>
+<td>-0.953472</td>
+<td>-0.308618</td>
+</tr>
+<tr>
+<th>2015-01-14</th>
+<td>-1.431190</td>
+<td>-1.731018</td>
+<td>0.970498</td>
+<td>0.916734</td>
+</tr>
+<tr>
+<th>2015-01-21</th>
+<td>0.831249</td>
+<td>-1.129123</td>
+<td>0.114963</td>
+<td>-0.976705</td>
+</tr>
+<tr>
+<th>2015-01-28</th>
+<td>-0.677658</td>
+<td>0.303644</td>
+<td>-0.331522</td>
+<td>0.657884</td>
+</tr>
+<tr>
+<th>2015-02-04</th>
+<td>2.541704</td>
+<td>-0.663811</td>
+<td>1.373684</td>
+<td>1.396331</td>
+</tr>
+<tr>
+<th>2015-02-11</th>
+<td>-0.867030</td>
+<td>1.726744</td>
+<td>-0.018520</td>
+<td>0.996996</td>
+</tr>
+<tr>
+<th>2015-02-18</th>
+<td>-0.583344</td>
+<td>-0.756376</td>
+<td>0.154717</td>
+<td>-0.980414</td>
+</tr>
+<tr>
+<th>2015-02-25</th>
+<td>-0.231362</td>
+<td>0.566808</td>
+<td>-0.867567</td>
+<td>-1.128934</td>
+</tr>
+<tr>
+<th>2015-03-04</th>
+<td>0.021171</td>
+<td>0.671597</td>
+<td>0.389465</td>
+<td>0.683615</td>
+</tr>
+<tr>
+<th>2015-03-11</th>
+<td>0.463642</td>
+<td>-0.965461</td>
+<td>1.663242</td>
+<td>1.122066</td>
+</tr>
+<tr>
+<th>2015-03-18</th>
+<td>0.310114</td>
+<td>-0.184744</td>
+<td>-1.070936</td>
+<td>-1.287324</td>
+</tr>
+<tr>
+<th>2015-03-25</th>
+<td>0.695630</td>
+<td>-0.207325</td>
+<td>0.118502</td>
+<td>0.311367</td>
+</tr>
+<tr>
+<th>2015-04-01</th>
+<td>0.039606</td>
+<td>1.780953</td>
+<td>-0.085437</td>
+<td>-1.565371</td>
+</tr>
+<tr>
+<th>2015-04-08</th>
+<td>-1.473733</td>
+<td>-0.092036</td>
+<td>-0.021474</td>
+<td>1.309292</td>
+</tr>
+<tr>
+<th>2015-04-15</th>
+<td>1.081818</td>
+<td>-0.422955</td>
+<td>-0.312514</td>
+<td>-0.655529</td>
+</tr>
+<tr>
+<th>2015-04-22</th>
+<td>0.580091</td>
+<td>-1.823223</td>
+<td>0.300733</td>
+<td>-0.840942</td>
+</tr>
+<tr>
+<th>2015-04-29</th>
+<td>0.432680</td>
+<td>-0.814402</td>
+<td>0.874517</td>
+<td>0.468417</td>
+</tr>
+<tr>
+<th>2015-05-06</th>
+<td>-0.035837</td>
+<td>-0.931344</td>
+<td>0.313048</td>
+<td>0.605522</td>
+</tr>
+<tr>
+<th>2015-05-13</th>
+<td>-0.084859</td>
+<td>1.251015</td>
+<td>2.058171</td>
+<td>-0.207379</td>
+</tr>
+<tr>
+<th>2015-05-20</th>
+<td>-0.206285</td>
+<td>-1.292480</td>
+<td>0.095645</td>
+<td>-1.584340</td>
+</tr>
+<tr>
+<th>2015-05-27</th>
+<td>-0.932938</td>
+<td>0.469286</td>
+<td>1.594331</td>
+<td>-0.879406</td>
+</tr>
+<tr>
+<th>2015-06-03</th>
+<td>-1.222327</td>
+<td>0.215345</td>
+<td>-0.943071</td>
+<td>-0.690301</td>
+</tr>
+<tr>
+<th>2015-06-10</th>
+<td>-0.930289</td>
+<td>0.275847</td>
+<td>-0.515775</td>
+<td>-0.196120</td>
+</tr>
+<tr>
+<th>2015-06-17</th>
+<td>0.233652</td>
+<td>-1.420764</td>
+<td>-0.204499</td>
+<td>-1.230919</td>
+</tr>
+<tr>
+<th>2015-06-24</th>
+<td>-0.075870</td>
+<td>1.414713</td>
+<td>-1.724532</td>
+<td>-0.214290</td>
+</tr>
+<tr>
+<th>2015-07-01</th>
+<td>-1.011935</td>
+<td>0.299693</td>
+<td>0.625892</td>
+<td>1.132355</td>
+</tr>
+<tr>
+<th>2015-07-08</th>
+<td>0.126574</td>
+<td>-0.696162</td>
+<td>-0.359065</td>
+<td>-0.285593</td>
+</tr>
+<tr>
+<th>2015-07-15</th>
+<td>-0.055311</td>
+<td>-0.762179</td>
+<td>0.674745</td>
+<td>1.917619</td>
+</tr>
+<tr>
+<th>2015-07-22</th>
+<td>1.260957</td>
+<td>0.305697</td>
+<td>-0.515664</td>
+<td>0.153019</td>
+</tr>
+<tr>
+<th>2015-07-29</th>
+<td>-1.104615</td>
+<td>0.707680</td>
+<td>1.884046</td>
+<td>-0.619463</td>
+</tr>
+<tr>
+<th>2015-08-05</th>
+<td>0.544672</td>
+<td>-1.169498</td>
+<td>0.596024</td>
+<td>0.549084</td>
+</tr>
+<tr>
+<th>2015-08-12</th>
+<td>1.495104</td>
+<td>-0.582083</td>
+<td>0.694864</td>
+<td>0.778727</td>
+</tr>
+<tr>
+<th>2015-08-19</th>
+<td>-1.562557</td>
+<td>0.370357</td>
+<td>-0.037172</td>
+<td>0.675588</td>
+</tr>
+<tr>
+<th>2015-08-26</th>
+<td>-0.446703</td>
+<td>0.731919</td>
+<td>-1.708521</td>
+<td>0.564574</td>
+</tr>
+<tr>
+<th>2015-09-02</th>
+<td>0.241940</td>
+<td>0.163498</td>
+<td>-1.862696</td>
+<td>0.415779</td>
+</tr>
+<tr>
+<th>2015-09-09</th>
+<td>-2.296901</td>
+<td>-0.563720</td>
+<td>1.324903</td>
+<td>-1.095282</td>
+</tr>
+<tr>
+<th>2015-09-16</th>
+<td>0.442306</td>
+<td>1.355271</td>
+<td>-1.124563</td>
+<td>-0.290335</td>
+</tr>
+<tr>
+<th>2015-09-23</th>
+<td>-0.310402</td>
+<td>0.132168</td>
+<td>1.050179</td>
+<td>-0.643694</td>
+</tr>
+<tr>
+<th>2015-09-30</th>
+<td>-1.246879</td>
+<td>1.287341</td>
+<td>0.865977</td>
+<td>-1.364445</td>
+</tr>
+<tr>
+<th>2015-10-07</th>
+<td>0.723050</td>
+<td>0.588241</td>
+<td>1.144880</td>
+<td>0.168754</td>
+</tr>
+<tr>
+<th>2015-10-14</th>
+<td>-0.357534</td>
+<td>0.191892</td>
+<td>-2.103178</td>
+<td>-0.537545</td>
+</tr>
+<tr>
+<th>2015-10-21</th>
+<td>0.765098</td>
+<td>-0.893700</td>
+<td>0.149578</td>
+<td>-1.427956</td>
+</tr>
+<tr>
+<th>2015-10-28</th>
+<td>-2.301114</td>
+<td>0.175801</td>
+<td>-1.972059</td>
+<td>-0.042373</td>
+</tr>
+<tr>
+<th>2015-11-04</th>
+<td>-0.521228</td>
+<td>-1.491611</td>
+<td>0.238031</td>
+<td>0.630240</td>
+</tr>
+<tr>
+<th>2015-11-11</th>
+<td>0.255590</td>
+<td>-0.960154</td>
+<td>-0.004225</td>
+<td>1.170644</td>
+</tr>
+<tr>
+<th>2015-11-18</th>
+<td>0.822972</td>
+<td>0.429818</td>
+<td>-0.007667</td>
+<td>-0.290294</td>
+</tr>
+<tr>
+<th>2015-11-25</th>
+<td>0.969651</td>
+<td>0.337200</td>
+<td>-0.160983</td>
+<td>-0.858754</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [150]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">long_df</span><span class="p">[</span><span class="s1">'Aug-2015'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[150]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>California</th>
+<th>Texas</th>
+<th>New York</th>
+<th>Florida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>2015-08-05</th>
+<td>0.544672</td>
+<td>-1.169498</td>
+<td>0.596024</td>
+<td>0.549084</td>
+</tr>
+<tr>
+<th>2015-08-12</th>
+<td>1.495104</td>
+<td>-0.582083</td>
+<td>0.694864</td>
+<td>0.778727</td>
+</tr>
+<tr>
+<th>2015-08-19</th>
+<td>-1.562557</td>
+<td>0.370357</td>
+<td>-0.037172</td>
+<td>0.675588</td>
+</tr>
+<tr>
+<th>2015-08-26</th>
+<td>-0.446703</td>
+<td>0.731919</td>
+<td>-1.708521</td>
+<td>0.564574</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [151]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">long_df</span><span class="p">[</span><span class="s1">'2014-01-06'</span><span class="p">:</span><span class="s1">'2014-02-06'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[151]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>California</th>
+<th>Texas</th>
+<th>New York</th>
+<th>Florida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>2014-01-08</th>
+<td>0.763195</td>
+<td>-1.009497</td>
+<td>0.343186</td>
+<td>0.808925</td>
+</tr>
+<tr>
+<th>2014-01-15</th>
+<td>0.567926</td>
+<td>-0.649508</td>
+<td>0.301028</td>
+<td>-1.183059</td>
+</tr>
+<tr>
+<th>2014-01-22</th>
+<td>1.029831</td>
+<td>-0.357734</td>
+<td>-0.256060</td>
+<td>-0.789614</td>
+</tr>
+<tr>
+<th>2014-01-29</th>
+<td>0.441617</td>
+<td>0.582626</td>
+<td>0.546245</td>
+<td>-0.036859</td>
+</tr>
+<tr>
+<th>2014-02-05</th>
+<td>0.102730</td>
+<td>-0.013300</td>
+<td>-0.592911</td>
+<td>1.399227</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="https://cvanderbush.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
